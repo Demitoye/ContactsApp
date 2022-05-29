@@ -11,7 +11,7 @@ workflows:
             # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
             vars:
                 PACKAGE_NAME: "com.contacts.app" # <-- Put your package name here e.g. com.domain.myapp
-            node: latest
+            node: v16.11.1
         triggering:
             events:
                 - push
@@ -50,7 +50,7 @@ workflows:
             # See the following link for details about email publishing - https://docs.codemagic.io/yaml-publishing/email
             email:
                 recipients:
-                    -ologuntoye@systemspecs.com.ng
+                    - ologuntoye@systemspecs.com.ng
                 notify:
                   success: true     # To not receive a notification when a build succeeds
                   failure: false    # To not receive a notification when a build fails
