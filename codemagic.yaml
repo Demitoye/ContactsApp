@@ -23,7 +23,7 @@ workflows:
         scripts:
             - name: Install npm dependencies
               script: |
-                                npm install
+                npm install
             - name: Set Android SDK location
               script: |
                 echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
@@ -43,9 +43,8 @@ workflows:
                 # Note that tracks can be specified when retrieving latest build number from Google Play, for example:
                 # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks alpha) + 1))
                 export NEW_BUILD_NUMBER= "1"
-                 cd android
-                gradle wrapper --gradle-version 6.9
-                ./gradlew assembleRelease
+                cd android 
+                ./gradlew assembleRelease                
         artifacts:
             - android/app/build/outputs/**/*.apk
         publishing:
