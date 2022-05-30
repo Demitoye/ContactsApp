@@ -44,8 +44,8 @@ workflows:
                 # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks alpha) + 1))
                 export NEW_BUILD_NUMBER= "1"
                  cd android
-          gradle wrapper --gradle-version 6.9
-          ./gradlew assembleRelease
+                gradle wrapper --gradle-version 6.9
+                ./gradlew assembleRelease
         artifacts:
             - android/app/build/outputs/**/*.apk
         publishing:
