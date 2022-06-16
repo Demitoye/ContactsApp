@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "989582285029",
+    "project_id": "demi-contacts",
+    "storage_bucket": "demi-contacts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989582285029:android:58d463322401c102571c0c",
+        "android_client_info": {
+          "package_name": "com.demi.contacts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "989582285029-5o8jrr098870h9ksgu6phego94od0aml.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.demi.contacts",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "989582285029-rv25ungqt5bf945naqvpnv3rijtb9414.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaxm5rsZDXm1HGKvzvBNwZ4MPN8QXNyrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "989582285029-rv25ungqt5bf945naqvpnv3rijtb9414.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

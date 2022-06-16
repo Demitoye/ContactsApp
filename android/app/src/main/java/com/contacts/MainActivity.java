@@ -1,4 +1,4 @@
-package com.contacts;
+package com.demi.contacts;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

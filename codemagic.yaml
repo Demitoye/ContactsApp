@@ -10,7 +10,7 @@ workflows:
                 - other
             # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
             vars:
-                PACKAGE_NAME: "com.contacts.app" # <-- Put your package name here e.g. com.domain.myapp
+                PACKAGE_NAME: "com.demi.contacts.app" # <-- Put your package name here e.g. com.domain.myapp
             node: v16.11.1
         triggering:
             events:
@@ -46,14 +46,16 @@ workflows:
                 #  cd android
                 # gradle wrapper --gradle-version 6.9
                 # ./gradlew assembleRelease
+                
 
                 # Set environment variable so it can be used to increment build number in android/app/build.gradle
                 # Note that tracks can be specified when retrieving latest build number from Google Play, for example:
                 # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks alpha) + 1))
                 export NEW_BUILD_NUMBER= "1.2"
-                gradle wrapper --gradle-version 6.9
                 cd android && ./gradlew assembleRelease   # To generate an .abb use--> ./gradlew bundleRelease               
+                            
         artifacts:
+            - android/app/build/outputs/**/*.aab
             - android/app/build/outputs/**/*.apk
         publishing:
             # See the following link for details about email publishing - https://docs.codemagic.io/yaml-publishing/email
@@ -61,7 +63,7 @@ workflows:
                 recipients:
                     - ologuntoye@systemspecs.com.ng
                 notify:
-                  success: true     # To not receive a notification when a build succeeds
+                  success: false     # To not receive a notification when a build succeeds
                   failure: false    # To not receive a notification when a build fails
             # slack: 
             #   # See the following link about how to connect your Slack account - https://docs.codemagic.io/yaml-publishing/slack

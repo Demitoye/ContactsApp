@@ -3,6 +3,7 @@ import {Text, View, Modal, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from '../Icon';
 import styles from './styles';
+import PropTypes from 'prop-types'
 
 const AppModal = ({
   modalVisible,
@@ -10,18 +11,24 @@ const AppModal = ({
   modalBody,
   title,
   setModalVisible,
+  closeOnTouchOutside,
 }) => {
   return (
     <Modal visible={modalVisible} transparent>
       <TouchableOpacity
         onPress={() => {
-          setModalVisible(false);
+          if (closeOnTouchOutside) {
+            setModalVisible(false);
+          }
         }}
         style={styles.wrapper}>
         <View style={styles.modalView}>
           <ScrollView>
             <View style={styles.header}>
-              <Icon type="evil" size={27} name="close" />
+              <TouchableOpacity onPress={() => setModalVisible(false)}>
+                <Icon type="evil" size={27} name="close" />
+              </TouchableOpacity>
+
               <Text styles={styles.title}> {title || 'RNContacts'}</Text>
               <View />
               <View />
@@ -33,28 +40,36 @@ const AppModal = ({
 
             <View style={styles.body}>{modalBody}</View>
 
-            
-              {modalFooter}
-              {!modalFooter && (
-                <View>
-                  <>
-                    <View style={styles.footerSeparator} />
-                    <View style={styles.footerItems}>
-                      <View style={styles.footer}>
-                        <Text style={styles.footerText}>Privacy Policy</Text>
-                        <View style={styles.termsView} />
-                        <Text style={styles.footerText}>Terms of Service</Text>
-                      </View>
+            {modalFooter}
+            {!modalFooter && (
+              <View>
+                <>
+                  <View style={styles.footerSeparator} />
+                  <View style={styles.footerItems}>
+                    <View style={styles.footer}>
+                      <Text style={styles.footerText}>Privacy Policy</Text>
+                      <View style={styles.termsView} />
+                      <Text style={styles.footerText}>Terms of Service</Text>
                     </View>
-                  </>
-                </View>
-              )}
-           
+                  </View>
+                </>
+              </View>
+            )}
           </ScrollView>
         </View>
       </TouchableOpacity>
     </Modal>
   );
 };
+
+AppModal.propTypes ={
+  closeOnTouchOutside:PropTypes.bool
+
+}
+
+AppModal.defaultProps ={
+  closeOnTouchOutside:true
+
+}
 
 export default AppModal;

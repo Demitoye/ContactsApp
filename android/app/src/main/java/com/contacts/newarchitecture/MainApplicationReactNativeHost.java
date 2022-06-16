@@ -1,4 +1,4 @@
-package com.contacts.newarchitecture;
+package com.demi.contacts.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.contacts.BuildConfig;
-import com.contacts.newarchitecture.components.MainComponentsRegistry;
-import com.contacts.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.demi.contacts.BuildConfig;
+import com.demi.contacts.newarchitecture.components.MainComponentsRegistry;
+import com.demi.contacts.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
