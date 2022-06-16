@@ -51,11 +51,10 @@ workflows:
                 # Set environment variable so it can be used to increment build number in android/app/build.gradle
                 # Note that tracks can be specified when retrieving latest build number from Google Play, for example:
                 # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks alpha) + 1))
-                ./gradlew assembleRelease   # To generate an .abb use--> ./gradlew bundleRelease  
                 export NEW_BUILD_NUMBER= "1.2"
                 cd android
                 gradle wrapper
-                ./gradlew assembleRelease             
+                ./gradlew assembleRelease   # To generate an .abb use--> ./gradlew bundleRelease     
                             
         artifacts:
             - android/app/build/outputs/**/*.aab
@@ -65,8 +64,10 @@ workflows:
             email:
                 recipients:
                     - ologuntoye@systemspecs.com.ng
+                    - demitoye6@gmail.com
+                notify_on_build_start: true   # To receive a notification when a build starts
                 notify:
-                  success: false     # To not receive a notification when a build succeeds
+                  success: true     # To receive a notification when a build succeeds
                   failure: false    # To not receive a notification when a build fails
             # slack: 
             #   # See the following link about how to connect your Slack account - https://docs.codemagic.io/yaml-publishing/slack
