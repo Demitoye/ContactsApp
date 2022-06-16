@@ -64,7 +64,7 @@ workflows:
             email:
                 recipients:
                     - ologuntoye@systemspecs.com.ng
-                notify_on_build_start: true   # To receive a notification when a build starts
+                    - demitoye6@gmail.com
                 notify:
                   success: true     # To receive a notification when a build succeeds
                   failure: false    # To not receive a notification when a build fails
