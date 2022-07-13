@@ -2,6 +2,7 @@ import React, {useState}from 'react';
 import { Text, View , TextInput} from 'react-native';
 import colors from '../../../assets/theme/colors';
 import styles from './styles';
+//
 
 const Input = ({onChangeText,style,icon,iconPosition, value, label, error,...props}) => {
 
